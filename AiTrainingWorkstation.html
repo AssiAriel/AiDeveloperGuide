@@ -316,6 +316,13 @@
  	     	<p>Will make the GPU run faster but at the cost pf stability - that is wear of the system, might crash and (so been said) might cause running errors.
 			<br>Probably keep it disabled, at least for now.</p>
  		    </li>
+
+ 			<li>Hardware Accelerated GPU Scheduling (HAGS)
+ 	     	<p>Brings to a better performance in Gaming, but some say that it actually brings to lower performance in training,
+			<br>also said to have stability problems, and it uses some of the GPU memory.
+			<br>Looks like it is disabled by default (not sure, but for now it is enough).</p>
+ 		    </li>
+
         </ol>
         </li>
     </ol>
@@ -532,6 +539,14 @@
 
 				<li>
                 Type: pip install numpy 
+				</li>
+
+				<li>
+				Open Terminal in D:\Dev\AiExcelProject,
+				<br>make sure you are in green .venv or activate it,
+                <br>then type: pip freeze > requirements.txt
+				<br>do it every time you add a new package to your project (helpful when moving to other computers).
+   	            <p><img src="images/PipFreeze.png" alt="Numpy" width="400" style="border: 2px solid black;"></p> 
 				</li>
 
 				<li>
