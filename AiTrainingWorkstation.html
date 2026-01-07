@@ -575,6 +575,16 @@
 			<br>you can see that 4.9 GB of Ollama is loaded into the 16GB of the 5070 TU card.</p>
    	        <p><img src="images/NvidiaMsi.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
  		    </li>
+
+			<li>Run on CUDA only
+            <p>This tells any app that runs on the computer, and looks for CUDA,
+            <br>to use only the GPU card and not the CPU integrated GPU.
+			<br>Close Ollama (and maybe VSCode) before you run it, and restart after.
+            <br>[Environment]::SetEnvironmentVariable("CUDA_VISIBLE_DEVICES", "0", "User")
+			<br>Note that you can also choose to do it for a specific app:
+			<br>[Environment]::SetEnvironmentVariable("OLLAMA_CUDA_DEVICES", "0", "User")</p>
+   	        <p><img src="images/CudaSelect.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+			</li>
         </ol>
         </li>
     </ol>
