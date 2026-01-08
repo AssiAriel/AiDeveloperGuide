@@ -26,29 +26,29 @@
 		<p class="TitleList2Blue">BIOS and Drivers</p>
 		<p>On first run of the PC, prior to Windows installation.</p>
         <ol>
- 			<li> Check BIOS
+ 			<li>Check BIOS
  	     	<p>Enter the BIOS and check CPU temperature, RAM, DDR, fans, cooler pump.</p>
  		    </li>
 
- 			<li> Update BIOS
+ 			<li>Update BIOS
  	     	<p>Update the BIOS.</p>
  		    </li>
 
- 			<li> XMP
+ 			<li>XMP
  	     	<p>Enable the XMP in the BIOS.
 			<br>Faster DDR will drop to default speed without it.</p>
  		    </li>
 
- 			<li> CPU integrated GPU
+ 			<li>CPU integrated GPU
  	     	<p>Set the CPU integrated GPU as the Display in the BIOS.
 			<br>We use the CPU integrated GPU for the  monitor (and keep the GPU card free for AI).</p>
  		    </li>
 
- 			<li> Fans Power
+ 			<li>Fans Power
  	     	<p>Set all the fans to PWN in the BIOS.</p>
  		    </li>
 
- 			<li> Fans Curves
+ 			<li>Fans Curves
 			<p>In this PC there are 3 fans set to intake at the front, 3 fans set to exhaust at the top (cooler fans),
 			<br>one fan at the rear set to exhaust and 2 fans at the bottom set to intake.
 		    <br>There is an idea to set the rear and bottom fans to react to the GPU temperature instead of the CPU temperature.
@@ -63,7 +63,7 @@
 		<!--- Windows Installation -->	
 		<p class="TitleList2Blue">Windows Installation</p>
         <ol>
- 			<li> Windows
+ 			<li>Windows
             <ol>
                 <li>
                 Install Windows 11 Pro
@@ -74,7 +74,7 @@
 			</ol>
 			</li>
 
- 			<li> Clean Windows
+ 			<li>Clean Windows
             <ol>
                 <li>
                 Uninstall unnecessary preinstalled Apps
@@ -85,19 +85,19 @@
 			</ol>
  		    </li>
 
- 			<li> Device Driver
+ 			<li>Device Driver
  	     	<p>Check the Device driver for warning sign on drivers.
 			<br>(Note - if you see a warning on the RAID controller then go to the Bios and disable VMD).
 			</p>
 
  		    </li>
 
- 			<li> Motherboard Tool
+ 			<li>Motherboard Tool
  	     	<p>Don't install the motherboard update tool.
 			<br>It will run in the background or install redundant tools.</p>
  		    </li>
 
- 			<li> Update Drivers
+ 			<li>Update Drivers
  	     	<p>Update the drivers - manually only the needed ones, according to the below order.</p>
             <ol>
                 <li>
@@ -127,7 +127,7 @@
 		<!--- Samsung Magician -->	
 		<p class="TitleList2Blue">Samsung Magician</p>
         <ol>
- 			<li> Inside Samsung Magician
+ 			<li>Inside Samsung Magician
             <ol>
                 <li>
                 Update the SSD firmware
@@ -150,23 +150,12 @@
 		<!--- Nvidia App and Control Panel -->	
 		<p class="TitleList2Blue">Nvidia App and Control Panel</p>
         <ol>
- 			<li> Nvidia App
+ 			<li>Nvidia App
  	     	<p>Install Nvidia App.</p>
  		    </li>
 
- 			<li> Studio Driver
+ 			<li>Studio Driver
  	     	<p>Inside Nvidia App install the Studio Driver not the Game Ready Driver.</p>
- 		    </li>
-
- 			<li> Nvidia power management mode
- 	     	<p>Set Nvidia power management for performance - only for our running tools,
-			<br>set it for VSCode, Python, Ollama, and more if needed (so, it can be set only the tool is installed..).
-			<br>Right click on the Desktop and open NVIDIA Control Panel,
-			<br>go to "Manage 3D settings" -> "Program Settings tab" -> "Add",
-			<br>since they are installed on D: we need to "Browse" to D:\Tools\VSCode\Microsoft VS Code,
-			<br>choose code.exe,
-			<br>scroll down to "Power management mode" and set it to "Prefer maximum performance" and "Apply"</p>
-    	    <p><img src="images/NvidiaPower.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
  		    </li>
 		</ol>
         </li>
@@ -175,38 +164,43 @@
 		<!--- BIOS Settings for Nvidia -->	
 		<p class="TitleList2Blue">BIOS Settings for Nvidia</p>
         <ol>
- 			<li> Re-size BAR
+ 			<li>Re-size BAR
  	     	<p>In the BIOS enable Re-size BAR.</p>
  		    </li>
 
- 			<li> CSM
+ 			<li>CSM
  	     	<p>In the BIOS, under Advanced Mode -> Boot, disable the CSM.</p>
  		    </li>
 
- 			<li> Verify Re-size BAR
+ 			<li>Verify Re-size BAR
  	     	<p>To verify that Re-size BAR is enabled, right click on the Desktop and open NVIDIA Control Panel,
 			<br>on the bottom left open System Information, and look there for Resizable BAR - Yes.</p>
  		    </li>
         </ol>
         </li>
 
-
 		<li>
-		<!--- More BIOS Settings (due to benchmark)-->	
-		<p class="TitleList2Blue">More BIOS Settings (due to benchmark)</p>
+		<!---  BIOS Settings due to benchmark -->	
+		<p class="TitleList2Blue">BIOS Settings due to benchmark</p>
 		<p>Actually I set these parameters after achieving poor results in the Multi Thread test in Cinebench 2026 (below).
 		<br>Setting them, especially the first one, made it jump to the expected results.</p>
         <ol>
- 			<li> IA CEP
- 	     	<p>In the BIOS disable IA CEP.</p>
+ 			<li>IA CEP
+ 	     	<p>In the BIOS set "IA CEP" to "Disabled".</p>
  		    </li>
 
- 			<li> Package Power Limit
- 	     	<p>In the BIOS set both Long Duration Package Power Limit and Short Duration Package Power Limit to 253.</p>
+ 			<li>Long Duration Package Power Limit
+ 	     	<p>In the BIOS set "Long Duration Package Power Limit" to "219"
+			<br>Actually I run the benchmark on 253, but I don't think it matters, if it is then....</p>
  		    </li>
 
- 			<li> ASUS Performance Enhancement 3.0
- 	     	<p>In the BIOS set "ASUS Performance Enhancement 3.0" to Enabled (90°C Limit).</p>
+ 			<li>Short Duration Package Power Limit
+ 	     	<p>In the BIOS set "Long Duration Package Power Limit" to "219"
+			<br>Actually I run the benchmark on 253, but I don't think it matters, if it is then....</p>
+ 		    </li>
+
+ 			<li>ASUS Performance Enhancement 3.0
+ 	     	<p>In the BIOS set "ASUS Performance Enhancement 3.0" to "Enabled (limit CPU temp. at 90°C)".</p>
  		    </li>
         </ol>
         </li>
@@ -217,7 +211,7 @@
 		<p>We already run Samsung Magician benchmark above. We run additional benchmarks here.
 		<br>Note that it looks sufficient so we don't need to run any more benchmarks.</p>
         <ol>
- 			<li> HWiNFO
+ 			<li>HWiNFO
             <ol>
                 <li>
                 Download and install
@@ -231,13 +225,13 @@
 			</ol>
 			</li>
 
- 			<li> Cinebench 2026
+ 			<li>Cinebench 2026
  	     	<p>Run the different tests there (especially GPU, single core and Multi Thread).
 			<br>Monitor the run with the tool above
 			<br>Compare the scores to other similar setups (for example on reddit thread "The new Cinebench 2026 benchmark").</p>
  		    </li>
 
- 			<li> 3Dmark
+ 			<li>3Dmark
  	     	<p>Inside 3DMark run Time Spy (you might need to look for it among other apps inside benchmark tab).</p>
  		    </li>
 
@@ -250,20 +244,42 @@
         </li>
 
 		<li>
-		<!--- More BIOS Settings-->	
-		<p class="TitleList2Blue">More BIOS Settings</p>
+		<!--- More BIOS Settings (added after benchmark) -->	
+		<p class="TitleList2Blue">More BIOS Settings (added after benchmark)</p>
+		<p>I explicitly note here that these changes were done after running the benchmark so that if something degraded... </p>
         <ol>
- 			<li> ASUS Armoury Crate
+ 			<li>ASUS Armoury Crate
  	     	<p>This is the ASUS motherboard application.
 			<br>We didn't install it (see above), but it might still suggest or run in background.
 			<br>Disable it in the BIOS: Tool -> ASUS Armoury Crate.</p>
+ 		    </li>
+
+ 			<li>Performance Preferences
+ 	     	<p>In the BIOS set "Performance Preferences" to "Intel Default Settings"
+			<br>this is actually the default.</p>
+ 		    </li>
+
+ 			<li>Intel Default Settings
+ 	     	<p>In the BIOS set "Intel Default Settings" to "Performance"
+			<br>this is actually the default.</p>
+ 		    </li>
+
+ 			<li>Performance Core Ratio
+ 	     	<p>In the BIOS set "Performance Core Ratio" to "Auto"
+			<br>this is actually the default.</p>
+ 		    </li>
+
+ 			<li>CPU Core/Cache Current Limit Max
+ 	     	<p>In the BIOS set "CPU Core/Cache Current Limit Max" to "307"
+			</p>
  		    </li>
         </ol>
         </li>
 
 		<li>
-		<!--- More Windows Settings -->	
-		<p class="TitleList2Blue">More Windows Settings</p>
+		<!--- More Windows Settings (added after benchmark) -->	
+		<p class="TitleList2Blue">More Windows Settings (added after benchmark)</p>
+		<p>I explicitly note here that these changes were done after running the benchmark so that if something degraded... </p>
         <ol>
  			<li>No Antivirus
  	     	<p>Don't install No 3rd party Antivirus, use the built in WIndows Security,
@@ -296,6 +312,24 @@
 		    <br>Apply and OK.</p>
  		    </li>
 
+ 			<li> Nvidia power management mode
+ 	     	<p>Set Nvidia power management for performance - only for our running tools,
+			<br>set it for VSCode, Python, Ollama, and more if needed (so, it can be set only the tool is installed..).
+			<br>Right click on the Desktop and open NVIDIA Control Panel,
+			<br>go to "Manage 3D settings" -> "Program Settings tab" -> "Add",
+			<br>since they are installed on D: we need to "Browse" to D:\Tools\VSCode\Microsoft VS Code,
+			<br>choose code.exe,
+			<br>scroll down to "Power management mode" and set it to "Prefer maximum performance" and "Apply"</p>
+    	    <p><img src="images/NvidiaPower.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+ 		    </li>
+
+ 			<li>Developer Mode
+ 	     	<p>Not sure that it does much but,
+			<br>Settings > System > Advanced,
+			<br>under "For developers",
+			<br>"Developer Mode" set it to ON,
+		    <br>"Yes".</p>
+ 		    </li>
         </ol>
         </li>
 
@@ -322,7 +356,6 @@
 			<br>also said to have stability problems, and it uses some of the GPU memory.
 			<br>Looks like it is disabled by default (not sure, but for now it is enough).</p>
  		    </li>
-
         </ol>
         </li>
     </ol>
