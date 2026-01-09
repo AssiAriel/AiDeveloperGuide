@@ -233,7 +233,7 @@
    			<li>Check RAM
             <p>Check how much RAM is allocated for Linux
             <br>type: free -h
-           	 <p><img src="images/LinuxRam1.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+            <p><img src="images/LinuxRam1.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
             <p>This is not so good, I have 64GB of RAM and only 32GB is allocated for Linux (50% is the default), 
             <br>I want to have more RAM for the Linux model training,
             <br>(and actually I don't really think it needs it for Llama 3.1 QLoRA, but...),
@@ -270,8 +270,77 @@
     </ol>
 
 
+1111111
+
+ <!----------------------------------------------------------------------------------------------->
+
+    <!--- Unsloth -->
+    <p class="TitleList1Blue">Unsloth</p>
+    <ol>
+        <li>
+		<!--- Install Unsloth -->
+		<p class="TitleList2Blue">Install Unsloth</p>
+     	<ol>
+   			<li>Install Unsloth
+            <ol>
+                <li>
+                Use a "No Dependencies" installation,
+                <br>so that Unsloth wouldn't overwrite the Python version that we just installed with other "recommended" version.
+                <br>Type: "conda activate ailab" to enter ailab room
+				</li>
+
+                <li>
+                Type: pip install --no-deps "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+                <br>This installs Unsloth
+				</li>
+
+                <li>
+                Type: pip install --no-deps trl peft accelerate bitsandbytes
+                <br>This installs helper libraries
+				</li>
+
+                <li>
+                Type: pip install --upgrade transformers
+                <br>Update the Transformers,
+                <br>and we get error
+              	<p><img src="images/UnslothInstallError1.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+                <p>We get this error because we installed with no dependencies, becaus we wanted to keep our specific version of Python,
+                <br>because we needed a newer version of Python to support our new in market GPU,
+                <br>probably in time all these will not be needed as the new GPU wil be supported in the common packages.</p>
+				</li>
+
+                <li>
+                Type: pip install --no-deps datasets==3.0.0
+				</li>
+
+                <li>
+                Type: pip install psutil
+				</li>
+                
+                <li>
+                When install passes run a test script:
+                <br>copy this code to a file:
+                <br><a href="check_blackwell.py" download>Download "check_blackwell.py" file</a>
+                <br>save the file as check_blackwell.py
+                <br>copy the file to ailab in Linux,
+                <br>one simple way is to type in ailab: "explorer.exe ." and a Windows folder opens for you to copy to,
+                <br>run it there.
+              	<p><img src="images/CheckUnsloth.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+                <p>In my case it found some missing or dependencies errors, so I installed the package below,
+                <br>if you get errors just follow the messages you get.</p>
+               </li>
+
+                <li>
+                Type: pip install --no-deps unsloth_zoo
+				</li>
+            </ol>
+		</ol>
+		</li>
+    </ol>
 
 
+
+    
 
 
 
