@@ -203,8 +203,8 @@
             <br>type: print(f"GPU Name: {torch.cuda.get_device_name(0)}")
             <br>type: exit()
             <br>and actually, it didn't work for me, this version doesn't support sm_120 which is the CUDA architecture of my card:
-           	 <p><img src="images/LinuxPytorchWarning.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
-            <p>so  I need to install a newer version
+           	<p><img src="images/LinuxPytorchWarning.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+            <p>So I need to install a newer version
             <br>from inside ailab room "(ailab) dev@AssiWorkstation:~$"
             <br>type: pip uninstall torch torchvision torchaudio -y
             <br>type: pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
@@ -215,22 +215,59 @@
    			<li>And verify some more
             <p>Verify that (for my specific card) sm_120 is part of python
             <br>verify that  Persistence-M is On
-           	 <p><img src="images/LinuxCheckSmi.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+           	<p><img src="images/LinuxCheckSmi.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
  		    </li>
 		</ol>
 		</li>
     </ol>
 
+ <!----------------------------------------------------------------------------------------------->
 
+    <!--- RAM -->
+    <p class="TitleList1Blue">RAM</p>
+    <ol>
+        <li>
+		<!--- Allocate RAM -->
+		<p class="TitleList2Blue">Allocate RAM</p>
+     	<ol>
+   			<li>Check RAM
+            <p>Check how much RAM is allocated for Linux
+            <br>type: free -h
+           	 <p><img src="images/LinuxRam1.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+            <p>This is not so good, I have 64GB of RAM and only 32GB is allocated for Linux (50% is the default), 
+            <br>I want to have more RAM for the Linux model training,
+            <br>(and actually I don't really think it needs it for Llama 3.1 QLoRA, but...),
+            <br>on the other hand I want to leave enough RAM for Windows to run WSL, for we to work parallel, and just to keep things calm...</p>
+   		    </li>
 
+   			<li>Allocate RAM
+            <ol>
+                <li>
+                On windows, open Notepad,
+                <br>type this in plain text, only this:
+                <br>[wsl2]
+                <br>memory=48GB
+                <br>Save the file with this name in your user place C:\Users\Assi\.wslconfig
+				</li>
 
+                <li>
+                In the Ubuntu window,
+                <br> type:exit
+				</li>
 
+                <li>
+                In the Windows Terminal
+                <br>type: wsl --shutdown
+				</li>
 
-
-
-
-
-
+                <li>
+                Open Ubuntu window again
+                <br>check now
+				</li>
+            </ol>
+		</ol>
+		</li>
+    </ol>
 
 
 
