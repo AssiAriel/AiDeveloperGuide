@@ -71,21 +71,41 @@
         </li>
 	
         <!--- L1 -->
+		<li>
+		<!--- Python Packages -->	
+		<p class="TitleList2Blue">Python Packages</p>
+        <ol>
+            <!--- L2 -->
+ 			<li> Install Python packages
+			<p>Open Terminal inside VSCode (with the green .venv).</p>
+            <ol>
+                <!--- L3 -->
+				<li>Type: pip install xlwings
+   	            <p><img src="images/PipXlwings.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+				</li>
+
+                <!--- L3 -->
+				<li>Type: pip install customtkinter 
+				</li>
+            </ol>
+            </li>    
+        </ol>
+        </li>
+
+        <!--- L1 -->
         <li>
 		<!--- Excel Ribbon -->
 		<p class="TitleList2Blue">Excel Ribbon</p>
      	<ol>
             <!--- L2 -->
-			<li	>Add Button to the Ribbon
+			<li>Add Button to the Ribbon
             <ol>
                 <!--- L3 -->
-                <li>
-                Save the Excel file as .xlsm (for now, can be changed to include other types)
+                <li>Save the Excel file as .xlsm (for now, can be changed to include other types)
 				</li>
 
                 <!--- L3 -->
-                <li>
-                Inside Excel Alt + F1, add:
+                <li>Inside Excel Alt + F1, add:
 				<br><pre>Sub LaunchAIExcel()
                 <br>    RunPython "import AiExcel_main; AiExcel_main.main()"
                 <br>End Sub</pre>
@@ -95,8 +115,7 @@
 				</li>
 
                 <!--- L3 -->
-                <li>
-                Right click on the Ribbon and "Customize the Ribbon...",
+                <li>Right click on the Ribbon and "Customize the Ribbon...",
                 <br>on the right "New Tab",
                 <br>"Rename..." the "New Tab" and the "New Group",
                 <br>on the left side change the drop down to "Macros",
@@ -105,8 +124,7 @@
 				</li>
 
                 <!--- L3 -->
-                <li>
-				When you open an Excel file from D: (DevDrive) you will get a "Security Risk Microsoft has blocked macros..."
+                <li>When you open an Excel file from D: (DevDrive) you will get a "Security Risk Microsoft has blocked macros..."
                 <br>this happens only on D:.
                 <br>Right click on the Ribbon and "Customize the Ribbon...",
                 <br>Inside Excel File -> Options,
@@ -125,8 +143,7 @@
 			<li	>Connect RunPython to Excel
             <ol>
                 <!--- L3 -->
-                <li>
-                Open Terminal in D:\Dev\AiExcelProject,
+                <li>Open Terminal in D:\Dev\AiExcelProject,
 				<br>go to green .venv, run:
 				<br> .\.venv\Scripts\Activate.ps1
                 <br>run : xlwings quickstart temp_fix --standalone
@@ -134,16 +151,14 @@
 				</li>
 
                 <!--- L3 -->
-                <li>
-                Open the Excel file that is in new folder,
+                <li>Open the Excel file that is in new folder,
 				<br>press Alt + F11
 				<br>right click on Module -> xlwings
                 <br>"Export File..." and "Save"
 				</li>
 
                 <!--- L3 -->
-                <li>
-                Open AI_Generated_Table.xlsm
+                <li>Open AI_Generated_Table.xlsm
                 <br>Alt + F11
                 <br>right-click VBAProject (I_Generated_Table.xlsm),
                 <br>"Import File..." and select xlwings.bas

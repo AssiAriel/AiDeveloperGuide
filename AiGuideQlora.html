@@ -422,11 +422,11 @@
             <!--- L2 -->
    			<li>Download Llama
  	     	<p>Copy this code to a file:
-            <br><a href="texts/download_llama.py" download>Download "download_llama.py" file</a>
-            <br>save the file as download_llama.py
+            <br><a href="texts/download_llama3_1_8b.py" download>Download "download_llama3_1_8b.py" file</a>
+            <br>save the file as download_llama3_1_8b.py
             <br>copy the file to ailab in Linux (like with did above),
             <br>Inside ailab type: 
-            <br>python download_llama.py</p>
+            <br>python download_llama3_1_8b.py</p>
  		    </li>
 		</ol>
 		</li>
@@ -473,11 +473,11 @@
             <!--- L2 -->
    			<li>Run Llama test
  	     	<p>Copy this code to a file:
-            <br><a href="texts/test_llama.py" download>Download "test_llama.py" file</a>
-            <br>save the file as test_llama.py
+            <br><a href="texts/check_llama3_1_8b_inference.py" download>Download "check_llama3_1_8b_inference.py" file</a>
+            <br>save the file as check_llama3_1_8b_inference.py
             <br>copy the file to ailab in Linux (like with did above),
             <br>Inside ailab type: 
-            <br>python test_llama.py</p>
+            <br>python check_llama3_1_8b_inference.py</p>
             </li>
 
             <!--- L2 -->
@@ -519,24 +519,34 @@
         <p>Now, actually running SFT QLoRA to train  Llama 3.1 8B.</p>
      	<ol>
             <!--- L2 -->
-   			<li>Download the Llama model
+   			<li>Download the yahma/alpaca-cleaned dataset
  	     	<p>Copy this code to a file:
-            <br><a href="texts/download_llama.py" download>Download "download_llama.py" file</a>
-            <br>save the file as download_llama.py
+            <br><a href="texts/download_alpaca_dataset.py" download>Download "download_alpaca_dataset.py" file</a>
+            <br>save the file as download_alpaca_dataset.py
             <br>type in ailab: "explorer.exe ."
             <br>copy the file to ailab in Linux,
             <br>Inside ailab type: 
-            <br>python download_llama.py</p>
+            <br>python download_alpaca_dataset.py</p>
  		    </li>
 
             <!--- L2 -->
- 			<li>Run SFT on Llama
+ 			<li>Run SFT on Llama (no Inference and without saving the result adapters)
  	     	<p>Copy this code to a file:
-            <br><a href="texts/llama_first_train.py" download>Download "llama_first_train.py" file</a>
-            <br>save the file as llama_first_train.py
+            <br><a href="texts/just_sft_llama3_1_8b.py" download>Download "just_sft_llama3_1_8b.py" file</a>
+            <br>save the file as just_sft_llama3_1_8b.py
             <br>copy the file to ailab in Linux,
             <br>Inside ailab type: 
-            <br>python llama_first_train.py</p>
+            <br>python just_sft_llama3_1_8b.py</p>
+ 		    </li>
+
+            <!--- L2 -->
+ 			<li>Run SFT on Llama (with Inference and saving the result adapters)
+ 	     	<p>Copy this code to a file:
+            <br><a href="texts/sft_llama3_1_8b.py" download>Download "sft_llama3_1_8b.py" file</a>
+            <br>save the file as sft_llama3_1_8b.py
+            <br>copy the file to ailab in Linux,
+            <br>Inside ailab type: 
+            <br>python sft_llama3_1_8b.py</p>
  		    </li>
 		</ol>
 		</li>
