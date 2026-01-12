@@ -451,7 +451,7 @@
             <!--- L2 -->
  			<li> Verify that it is Trusted
  	     	<p>Open Terminal as administrator, 
-			<br>type 'fsutil devdrv query D:",
+			<br>type <code>fsutil devdrv query D:</code>
 			<br>you can see that Windows Defender Filter is treating this drive as trusted,
 			<br>so now anything that is there will run faster.</p>
     	    <p><img src="images/DevDrive1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
@@ -557,14 +557,14 @@
             <!--- L2 -->
 			<li>Signin
  	     	<p>Open Terminal,
-			<br>git config --global user.name "your git Name"
-		    <br>git config --global user.email "your email"</p>
- 		    </li>
+			<br><code>git config --global user.name "your git Name"</code>
+		    <br><code>git config --global user.email "your email"</code></p>
+		</li>
 
             <!--- L2 -->
 			<li>Clone
  	     	<p>Open Terminal inside D:\Dev,
-			<br>git clone https://github.com/yourName/YourProject.git
+			<br><code>git clone https://github.com/yourName/YourProject.git</code>
 			<br>(now close and reopen VsCode).</p>
  		    </li>
         </ol>
@@ -591,12 +591,42 @@
  			<li>Install Ollama
  	     	<p>Download and install Ollama,
 		    <br>and don't forget to add it in "Nvidia Power Management" (see above).</p>
- 		    </li>
+ 			<p>Ollama Introduction and Installation Video:
+			<br><a href="https://www.youtube.com/watch?v=1xdneyn6zjw" target="_blank">Run New Llama 3.1 on Your Computer Privately in 10 minutes (Skill Leap AI)</a></p>
+            <p>Note - the new Ollama installation also installs Ollama Chat, so you don't need to install Docker - view the video upto 8:35 only.</p>
+		</li>
 
             <!--- L2 -->
- 			<li>Downloading Models and running
- 	     	<p>You can find it in "AI Guide - Excel" page.</p>
- 		    </li>
+ 			<li>Download Ollama Models
+  	     	<p>To download a Model (if it is not already downloaded by default):</p>
+     		<p><a href="https://ollama.com/" target="_blank">Go to Ollama website: Ollama website</a></p>
+
+  	     	<p>Find the model:</p>
+  			<img src="images/OllamaModels.png" class="zoomable" ondblclick="this.classList.toggle('full')">
+
+  	     	<p>Choose the version:</p>
+  			<img src="images/OllamaDownloadModel2.png" class="zoomable" ondblclick="this.classList.toggle('full')">
+
+  	     	<p>Copy:</p>
+  			<img src="images/OllamaDownloadModel3.png" class="zoomable" ondblclick="this.classList.toggle('full')">
+
+  	     	<p>Paste and run to download.
+			<br>Note that in order to run it from the chat application you need to close and reopen it.</p>
+  			<img src="images/OllamaDownloadModel4.png" class="zoomable" ondblclick="this.classList.toggle('full')">
+			</li>
+			
+            <!--- L2 -->
+			<li>Ollama running
+			<p>Run it form the Terminal or from the Ollama application.
+        	<br>Note - if you try a model that is too big for your computer, like 40B in this example, this is what you get.</p>
+   			<p></p><img src="images/OllamaCPU40B.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+
+			<p>When I tried a 24B model on a CPU with 16G RAM I get a lot of Disk usage (I believe swap files):</p>
+			<img src="images/OllamaMistral24B.png" class="zoomable" ondblclick="this.classList.toggle('full')">
+
+   	     	<p>You can remove models from the terminal by <code>ollama list</code> and then <code>ollama rm modelName</code>. </p>
+			<img src="images/OllamaDeleteModel.png" class="zoomable" ondblclick="this.classList.toggle('full')">
+            </li>
         </ol>
         </li>
 
@@ -613,16 +643,16 @@
 				</li>
 
                 <!--- L3 -->
-                <li>Type: python -m venv .venv
+                <li>Type: <code>python -m venv .venv</code>
 				<br>(.venv folder is created inside the project folder)
 				</li>
 
                 <!--- L3 -->
-				<li>Type: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+				<li>Type: <code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</code>
 				</li>
 
                 <!--- L3 -->
-				<li>Type: .\.venv\Scripts\Activate.ps1
+				<li>Type: <code>.\.venv\Scripts\Activate.ps1</code>
                 <br>now you can see in the terminal that the line starts with green (.venv)
    	            <p><img src="images/Venv1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 				</li>
@@ -641,17 +671,17 @@
 			<p>Open Terminal inside VSCode (with the green .venv).</p>
             <ol>
                 <!--- L3 -->
-                <li>Type: pip install ollama
+                <li>Type: <code>pip install ollama</code>
 				</li>
 
                 <!--- L3 -->
-				<li>Type: pip install numpy 
+				<li>Type: <code>pip install numpy</code>
 				</li>
 
                 <!--- L3 -->
 				<li>Open Terminal in the location of your project,
 				<br>make sure you are in green (.venv) or activate it,
-                <br>then type: pip freeze > requirements.txt
+                <br>then type: <code>pip freeze > requirements.txt</code>
 				<br>do it every time you add a new package to your project (will be helpful on moving to other computers).
    	            <p><img src="images/PipFreeze.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p> 
 				</li>
@@ -680,7 +710,7 @@
 
             <!--- L2 -->
  			<li>GPU memory
- 	     	<p>From the Terminal run: nvidia-smi
+ 	     	<p>From the Terminal run: <code>nvidia-smi</code>
 			<br>with the Python project that is running Ollama,
 			<br>you can see that the 4.9GB of Ollama is loaded into the 16GB of the 5070 Ti card.</p>
    	        <p><img src="images/NvidiaMsi.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
@@ -691,9 +721,9 @@
             <p>This tells any app that runs on the computer, and looks for CUDA,
             <br>to use only the GPU card and not the CPU integrated GPU.
 			<br>Close Ollama (and maybe VSCode) before you run it, and restart after.
-            <br>[Environment]::SetEnvironmentVariable("CUDA_VISIBLE_DEVICES", "0", "User")
+            <br><code>[Environment]::SetEnvironmentVariable("CUDA_VISIBLE_DEVICES", "0", "User")</code>
 			<br>Note that you can also choose to do it for a specific app:
-			<br>[Environment]::SetEnvironmentVariable("OLLAMA_CUDA_DEVICES", "0", "User")</p>
+			<br><code>[Environment]::SetEnvironmentVariable("OLLAMA_CUDA_DEVICES", "0", "User")</code></p>
    	        <p><img src="images/CudaSelect.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 			</li>
         </ol>

@@ -51,10 +51,6 @@
                 <!--- L3 -->
                 <li>Models file system: Windows DevDrive D:\ModelManagers\HuggingFace\Models\
 				</li>
-
-                <!--- L3 -->
-                <li>Also using :Hugging Face, bitsandbytes, triton, torch, transformers & peft
-				</li>
 			</ol>
  		    </li>
 		</ol>
@@ -73,39 +69,39 @@
      	<ol>
             <!--- L2 -->
    			<li>Install
- 	     	<p>Open Terminal as Administrator
-            <br>type: wsl --install
-            <br>when it is done restart your computer
+ 	     	<p>Open Terminal as Administrator,
+            <br>type: <code>wsl --install</code>
+            <br>when it is done restart your computer.
             <br>After restart, a black window will pop up asking for a Username and Password,
             <br>(choose simple ones like: dev, dev). 
-            <br>If no window pops up, open Terminal and type: wsl
+            <br>If no window pops up, open Terminal and type: <code>wsl</code>
             <br>if it start installing then good,
             <br>if it says "...no installed distributions" then
-            <br>use 'wsl.exe --list --online' to list available distributions
-            <br>type: wsl --install -d Ubuntu-24.04
+            <br>use <code>wsl.exe --list --online</code> to list available distributions,
+            <br>type: <code>wsl --install -d Ubuntu-24.04</code>
             <br>If it looks like it stopped on something like "Create a default Unix user account: ssi"
             <br>then actually, it is just a print over print.
-            <br>Backspace 3 times to remove the "ssi" string
-            <br>and enter your user name (dev)
-            <br>and then password.</p>
+            <br>Backspace 3 times to remove the "ssi" string,
+            <br>and enter your user name (dev),
+            <br>and then password (dev).</p>
  		    </li>
 
             <!--- L2 -->
    			<li>Uninstall
- 	     	<p>If you need to uninstall, open Terminal
-            <br>type: wsl --unregister Ubuntu-24.04
-            <br>type: wsl --install -d Ubuntu-24.04</p>
+ 	     	<p>If you need to uninstall, open Terminal,
+            <br>type: <code>wsl --unregister Ubuntu-24.04</code>
+            <br>type: <code>wsl --install -d Ubuntu-24.04</code></p>
  		    </li>
             
             <!--- L2 -->
             <li>Check
             <ol>
                 <!--- L3 -->
-                <li>Check that you got your user prompt on your computer
+                <li>Check that you got your username prompt on your Terminal
 				</li>
 
                 <!--- L3 -->
-                <li>Inside Ubuntu type: nvidia-smi
+                <li>Inside Ubuntu type: <code>nvidia-smi</code>
                 <br>you should see the GPU card there
            	    <p><img src="images/FirstLinuxRun.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
                 </li>
@@ -126,10 +122,10 @@
 
                 <!--- L3 -->
                 <li>Move from the Windows user folder to your Linux home folder
-                <br>type: cd ~
-                <br>type: ln -s /mnt/d/ModelManagers/HuggingFace/Models ~/Models
-                <br>To check type: cd ~/Models
-                <br>type: pwd
+                <br>type: <code>cd ~</code>
+                <br>type: <code>ln -s /mnt/d/ModelManagers/HuggingFace/Models ~/Models</code>
+                <br>To check type: <code>cd ~/Models</code>
+                <br>type: <code>pwd</code>
            	    <p><img src="images/LinuxSymbolicLink.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 				</li>
 			</ol>
@@ -137,17 +133,19 @@
 
             <!--- L2 -->
    			<li>Update Linux
- 	     	<p>Type: sudo apt update && sudo apt upgrade -y</p>
+ 	     	<p>Type: <code>sudo apt update && sudo apt upgrade -y</code></p>
  		    </li>
 
             <!--- L2 -->
    			<li>Opening Ubuntu window
- 	     	<p>Open Terminal and type: wsl
-            <br>or, open terminal and click the little dropdown arrow at the top and select Ubuntu 24.04
-            <br>or, right click the Desktop, 
+ 	     	<p>Open Terminal and type: <code>wsl</code>
+            <br>or, open terminal and click the little dropdown arrow at the top and select "Ubuntu 24.04"
+            <br>or, create a shortcut,
+            <br>right click the Desktop, 
             <br>New > Shortcut
             <br>location type: wsl.exe ~ -d Ubuntu-24.04
             <br>name: "AiLab Workstation"</p>
+            <p><img src="images/UbuntuShortcut.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
  		    </li>
 		</ol>
 		</li>
@@ -165,40 +163,40 @@
      	<ol>
             <!--- L2 -->
    			<li>Download Installation
- 	     	<p>Inside Ubuntu type: wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</p>
+ 	     	<p>Inside Ubuntu type: <code>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</code></p>
  		    </li>
 
             <!--- L2 -->
    			<li>Install
-            <p>Type: bash Miniconda3-latest-Linux-x86_64.sh
+            <p>Type: <code>bash Miniconda3-latest-Linux-x86_64.sh</code>
             <br>you get few "Yes" and "Enter"</p>
  		    </li>
 
             <!--- L2 -->
    			<li>Activate
-            <p>Type: source ~/.bashrc
+            <p>Type: <code>source ~/.bashrc</code>
             <br>and you get "(base)" in the beginning of your prompt</p>
  		    </li>
 
             <!--- L2 -->
    			<li>Create a room
-            <p>Type: conda create --name ailab python=3.11 -y
-            <br>it might not run but give you a message that you need to accept terms,
-            <br>so you need to run the two lines it gives you there.
-            <br>This command creates a "room", an environment, called ailab
+            <p>Type: <code>conda create --name ailab python=3.11 -y</code>
+            <br>it might not run but give a message that you need to accept the terms,
+            <br>so you need to run the two lines it gives you there that do that.
+            <br>This command creates a "room", an environment, called ailab,
             <br>where specific versions of installation (like Python) reside,
             <br>note that this is not the latest Python version - but the latest stable one for Llama3.1</p>
  		    </li>
 
             <!--- L2 -->
    			<li>Enter the room
-            <p>Type: conda activate ailab
+            <p>Type: <code>conda activate ailab</code>
             <br>and you get "(ailab)" in the beginning of your prompt</p>
  		    </li>
 
             <!--- L2 -->
             <li>Clean the  installation file
-            <p>Type: rm Miniconda3-latest-Linux-x86_64.sh</p>
+            <p>Type: <code>rm Miniconda3-latest-Linux-x86_64.sh</code></p>
  		    </li>
 		</ol>
 		</li>
@@ -216,32 +214,33 @@
      	<ol>
             <!--- L2 -->
    			<li>Install PyTorch
-            <p>From inside your ailab room "(ailab) dev@AssiWorkstation:~$"
-            <br>type: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+            <p>From inside your ailab room (ailab) dev@AssiWorkstation:~$
+            <br>type: <code>pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121</code>
             <br>you get many downloads and many colors...</p>
  		    </li>
             
             <!--- L2 -->
    			<li>Verify that Python talks to the GPU card
-            <p>type: python
-            <br>type: import torch
-            <br>type: print(f"CUDA available: {torch.cuda.is_available()}")
-            <br>type: print(f"GPU Name: {torch.cuda.get_device_name(0)}")
-            <br>type: exit()
-            <br>and actually, it didn't work for me, this version doesn't support sm_120 which is the CUDA architecture of my card:
+            <p>Type: <code>python</code>
+            <br>type: <code>import torch</code>
+            <br>type: <code>print(f"CUDA available: {torch.cuda.is_available()}")</code>
+            <br>type: <code>print(f"GPU Name: {torch.cuda.get_device_name(0)}")</code>
+            <br>type: <code>exit()</code>
+            <br>and actually... it didn't work for me,
+            <br>this version doesn't support sm_120 which is the CUDA architecture of this setup GPU card (5070 Ti):
            	<p><img src="images/LinuxPytorchWarning.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
             <p>So I need to install a newer version
-            <br>from inside ailab room "(ailab) dev@AssiWorkstation:~$"
-            <br>type: pip uninstall torch torchvision torchaudio -y
-            <br>type: pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+            <br>from inside ailab room (ailab) dev@AssiWorkstation:~$
+            <br>type: <code>pip uninstall torch torchvision torchaudio -y</code>
+            <br>type: <code>pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128</code>
             <br>now it is better:
             <p><img src="images/LinuxPytorchInstall.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
  		    </li>
 
             <!--- L2 -->
    			<li>And verify some more
-            <p>Verify that (for my specific card) sm_120 is part of python
-            <br>verify that  Persistence-M is On
+            <p>Verify that (for ths setup specific card) sm_120 is part of python,
+            <br>verify that Persistence-M is On
            	<p><img src="images/LinuxCheckSmi.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
  		    </li>
 		</ol>
@@ -261,12 +260,12 @@
             <!--- L2 -->
   			<li>Check RAM
             <p>Check how much RAM is allocated for Linux
-            <br>type: free -h
+            <br>type: <code>free -h</code>
             <p><img src="images/LinuxRam1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
             <p>This is not so good, I have 64GB of RAM and only 32GB is allocated for Linux (50% is the default), 
             <br>I want to have more RAM for the Linux model training,
             <br>(and actually I don't really think it needs it for Llama 3.1 QLoRA, but...),
-            <br>on the other hand I want to leave enough RAM for Windows to run WSL, for we to work parallel, and just to keep things calm...</p>
+            <br>on the other hand I want to leave enough RAM for Windows to run WSL, and for we to work parallel, and just to keep things calm...</p>
    		    </li>
 
             <!--- L2 -->
@@ -282,12 +281,12 @@
 
                 <!--- L3 -->
                 <li>In the Ubuntu window,
-                <br> type:exit
+                <br> type: <code>exit</code>
 				</li>
 
                 <!--- L3 -->
                 <li>In the Windows Terminal
-                <br>type: wsl --shutdown
+                <br>type: <code>wsl --shutdown</code>
 				</li>
 
                 <!--- L3 -->
@@ -316,52 +315,53 @@
                 <!--- L3 -->
                 <li>Use a "No Dependencies" installation,
                 <br>so that Unsloth wouldn't overwrite the Python version that we just installed with other "recommended" version.
-                <br>Type: "conda activate ailab" to enter ailab room
+                <br>Type: <code>conda activate ailab</code> to enter ailab room
 				</li>
 
                 <!--- L3 -->
-                <li>Type: pip install --no-deps "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+                <li>Type: <code>pip install --no-deps "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"</code>
                 <br>This installs Unsloth
 				</li>
 
                 <!--- L3 -->
-                <li>Type: pip install --no-deps trl peft accelerate bitsandbytes
+                <li>Type: <code>pip install --no-deps trl peft accelerate bitsandbytes</code>
                 <br>This installs helper libraries
 				</li>
 
                 <!--- L3 -->
-                <li>Type: pip install --upgrade transformers
-                <br>Update the Transformers,
+                <li>Type: <code>pip install --upgrade transformers</code>
+                <br>Updates the Transformers,
                 <br>and we get error
               	<p><img src="images/UnslothInstallError1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
                 <p>We get this error because we installed with no dependencies, becaus we wanted to keep our specific version of Python,
-                <br>because we needed a newer version of Python to support our new in market GPU,
-                <br>probably in time all these will not be needed as the new GPU wil be supported in the common packages.</p>
+                <br>because we needed a newer version of Python to support our new to the market GPU.
+                <br>Probably in time all these will not be needed as the new GPU wil be supported in the common packages.</p>
 				</li>
 
                 <!--- L3 -->
-                <li>Type: pip install --no-deps datasets==3.0.0
+                <li>Type: <code>pip install --no-deps datasets==3.0.0</code>
 				</li>
 
                 <!--- L3 -->
-                <li>Type: pip install psutil
+                <li>Type: <code>pip install psutil</code>
 				</li>
                 
                 <!--- L3 -->
-                <li>When install passes run a test script:
+                <li>When install passes, run a test script:
                 <br>copy this code to a file:
                 <br><a href="texts/check_blackwell.py" download>Download "check_blackwell.py" file</a>
                 <br>save the file as check_blackwell.py
-                <br>copy the file to ailab in Linux,
-                <br>one simple way is to type in ailab: "explorer.exe ." and a Windows folder opens for you to copy to,
-                <br>run it there.
+                <br>copy the file to ailab in Linux.
+                <br>One simple way to copy the file is to type in ailab: <code>explorer.exe .</code> and Windows explorer folder opens,
+                <br>simple Windows file copy,
+                <br>run it in the aiLab terminal.
               	<p><img src="images/CheckUnsloth.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
-                <p>In my case it found some missing or dependencies errors, so I installed the package below,
-                <br>if you get errors just follow the messages you get.</p>
+                <p>In my case it found some missing packages or dependencies errors, so I installed the package below.
+                <br>If you get errors just follow the messages you get.</p>
                </li>
 
                 <!--- L3 -->
-                <li>Type: pip install --no-deps unsloth_zoo
+                <li>Type: <code>pip install --no-deps unsloth_zoo</code>
 				</li>
             </ol>
             </li>
@@ -394,14 +394,14 @@
 
                 <!--- L3 -->
                 <li>Access Request
-                <p>Fill the Access Request form to get access to Llama-3.1-8B
+                <p>Fill the Access Request form to get access to Llama-3.1-8B,
                 <br>wait for it to be approved (it takes several minutes - you wil get a mail)</p>
                 </li>
 
                 <!--- L3 -->
                 <li>Create Token
                 <p>Go to Settings -> Access Tokens,
-                <br>go to "Read"Tab
+                <br>go to "Read"Tab,
                 <br>Give it a name (AssiWorkstationHFToken)
                 <br>"Create token" and copy it (you must copy it now)</p>
    		        </li>
@@ -411,9 +411,9 @@
             <!--- L2 -->
    			<li>Install HuggingFace
  	     	<p>Inside ailab type: 
-            <br>pip install huggingface_hub
-            <br>huggingface-cli login
-            <br>you will be asked for the token, copy it there (it doesn't show it, so make sure you type it and once)
+            <br><code>pip install huggingface_hub</code>
+            <br><code>huggingface-cli login</code>
+            <br>you will be asked for the token, copy it there (it doesn't show, so make sure you type it and once),
             <br>you are asked "Add token as git credential? (Y/n)" sey Y
             <br>if you see "Login successful" than it passed - and yes, it looks like that...</p>
             <p><img src="images/HuggingFaceCli.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
@@ -426,7 +426,7 @@
             <br>save the file as download_llama3_1_8b.py
             <br>copy the file to ailab in Linux (like with did above),
             <br>Inside ailab type: 
-            <br>python download_llama3_1_8b.py</p>
+            <br><code>python download_llama3_1_8b.py</code></p>
  		    </li>
 		</ol>
 		</li>
@@ -445,14 +445,14 @@
             <!--- L2 -->
    			<li>Install GCC
  	     	<p>Inside Ubuntu Terminal: 
-            <br>sudo apt update && sudo apt install build-essential -y
-            <br>enter your password - we defined "dev" above (password it doesn't show when you type)</p>
+            <br><code>sudo apt update && sudo apt install build-essential -y</code>
+            <br>enter your password, we defined it as "dev" above (note that it doesn't show when you type)</p>
             </li>
 
             <!--- L2 -->
    			<li>Verify GCC
  	     	<p>Inside Ubuntu Terminal: 
-            <br>gcc --version</p>
+            <br><code>gcc --version</code></p>
             <p><img src="images/GccVer.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
             </li>
 		</ol>
@@ -468,7 +468,7 @@
         <li>
 		<!--- Llama test -->
 		<p class="TitleList2Blue">Llama test</p>
-        <p>Verify that all the packages above are working and that you can get a simple Llama run.</p>
+        <p>Verify that all the packages above are working and that you can get a simple Llama inference.</p>
      	<ol>
             <!--- L2 -->
    			<li>Run Llama test
@@ -477,17 +477,17 @@
             <br>save the file as check_llama3_1_8b_inference.py
             <br>copy the file to ailab in Linux (like with did above),
             <br>Inside ailab type: 
-            <br>python check_llama3_1_8b_inference.py</p>
+            <br><code>check_llama3_1_8b_inference.py</code></p>
             </li>
 
             <!--- L2 -->
             <li>You might get errors
             <p>Errors on packages missing and so, it depends on the packages installed above etc.. 
             <br>and I got an error, 
-            <br>Installed: pip install hf_transfer
+            <br>Installed: <code>pip install hf_transfer</code>
             <br>got more errors,
             <p><img src="images/LlamaTestErrors.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
-            <p>installed: pip install cut_cross_entropy msgspec protobuf sentencepiece torchao tyro datasets==3.4.1 trl==0.24.0</p>
+            <p>installed: <code>pip install cut_cross_entropy msgspec protobuf sentencepiece torchao tyro datasets==3.4.1 trl==0.24.0</code></p>
             </li>
 
             <!--- L2 -->
@@ -498,9 +498,9 @@
 
             <!--- L2 -->
             <li>Watch
- 	     	<p>You can watch live the memory progress on the GPU while you run the test, see it rising and getting back to 0
+ 	     	<p>You can watch in live the memory progress on the GPU while you run the test, see it rising and getting back to 0
             <br>open another Terminal and type:
-            <br>watch -n 1 nvidia-smi
+            <br><code>watch -n 1 nvidia-smi</code>
             <p><img src="images/LlamaTestSmi.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
  		    </li>
 		</ol>
@@ -520,14 +520,14 @@
      	<ol>
             <!--- L2 -->
    			<li>Download the yahma/alpaca-cleaned dataset
- 	     	<p>This is done only once (the scripts below use this local copy of the dataset),
+ 	     	<p>This is done only once (and from now you will use this local copy of the dataset),
             <br>copy this code to a file:
             <br><a href="texts/download_alpaca_dataset.py" download>Download "download_alpaca_dataset.py" file</a>
             <br>save the file as download_alpaca_dataset.py
-            <br>type in ailab: "explorer.exe ."
+            <br>type in ailab: <code>explorer.exe .</code>
             <br>copy the file to ailab in Linux,
             <br>Inside ailab type: 
-            <br>python download_alpaca_dataset.py</p>
+            <br>python <code>download_alpaca_dataset.py</code></p>
  		    </li>
 
             <!--- L2 -->
@@ -537,7 +537,7 @@
             <br>save the file as just_sft_llama3_1_8b.py
             <br>copy the file to ailab in Linux,
             <br>Inside ailab type: 
-            <br>python just_sft_llama3_1_8b.py</p>
+            <br><code>python just_sft_llama3_1_8b.py</code></p>
 			<p>Below is just the run of this script on this workstation at this point, for reference:</p>
             <p><img src="images/SftLlamaFirstRun1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
             <p><img src="images/SftLlamaFirstRun2.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
@@ -559,14 +559,14 @@
             <br>save the file as sft_llama3_1_8b.py
             <br>copy the file to ailab in Linux,
             <br>Inside ailab type: 
-            <br>python sft_llama3_1_8b.py</p>
+            <br><code>python sft_llama3_1_8b.py</code></p>
  		    </li>
 
             <!--- L2 -->
  			<li>Stress test SFT on Llama
- 	     	<p>Same as the above, but edit the script to "Total steps = 600"
-			<p>Below are just the results on this workstation at this point, for reference,
-            <br>runtime, CPU and GPU loads and temperatures, fans speed, power, etc.. :</p>
+ 	     	<p>Same as the above, but edit the script to "Total steps = 600".</p>
+			<p>Below are the results of this workstation at this point, for reference:
+            <br>running time, CPU and GPU loads and temperatures, fans speed, power, etc.. :</p>
             <p><img src="images/SftLlamaStress.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
             <p><img src="images/llam3 8b Qlora HwMonitor.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
             <p><img src="images/llam3 8b Qlora Task Manager.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
@@ -584,16 +584,17 @@
         <li>
 		<!--- Inference on trained Llama -->
 		<p class="TitleList2Blue">Inference your previous trained Llama model</p>
-        <p>Choose a Llama model that you trained to inference.</p>
+        <p>Choose a Llama model that you already trained and run inference.</p>
      	<ol>
             <!--- L2 -->
  			<li>Run the trained model
  	     	<p>Copy this code to a file:
             <br><a href="texts/inference_trained_llama3_1_8b.py" download>Download "inference_trained_llama3_1_8b.py" file</a>
-            <br>save the file as sft_llama3_1_8b.py
+            <br>save the file as inference_trained_llama3_1_8b.py
             <br>copy the file to ailab in Linux,
             <br>Inside ailab type: 
-            <br>python inference_trained_llama3_1_8b.py</p>
+            <br><code>python inference_trained_llama3_1_8b.py</code>
+            <br>it will ask you to choose a trained model version to run.</p>
  		    </li>
         </ol>
 		</li>

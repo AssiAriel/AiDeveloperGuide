@@ -17,60 +17,6 @@
     <p class="TitleList1Blue">Installations</p>
     <ol>
         <!--- L1 -->
-        <li>
-		<!--- Ollama -->	
-		<p class="TitleList2Blue">Ollama - inference locally on CPU (Llama, Qwen and more)</p>
-        <ol>
-            <!--- L2 -->
- 			<li>Ollama Introduction and Installation Video
-			<p><a href="https://www.youtube.com/watch?v=1xdneyn6zjw" target="_blank">Link: Run New Llama 3.1 on Your Computer Privately in 10 minutes (Skill Leap AI)</a></p>
-  			<img src="images/OllamaInstallSite.png" class="zoomable" ondblclick="this.classList.toggle('full')"">
-			<p>Run inference from the terminal or from the Ollama chat.
-            <br>Note - the new Ollama installation also installs Ollama Chat, so you don't need to install Docker and so - view the video upto 8:35 only,
-            <br> (unless you want to upload files to the model).</p>
- 		    </li>
-
-            <!--- L2 -->
- 			<li>Ollama Models
-     		<p><a href="https://ollama.com/" target="_blank">Link: Run Ollama</a></p>
-  			<img src="images/Ollama.png" class="zoomable" ondblclick="this.classList.toggle('full')"">
-  	     	<p>Go to Ollama. </p>
-
-  			<img src="images/OllamaRun.png" class="zoomable" ondblclick="this.classList.toggle('full')"">
-  	     	<p>Choose a Model and run. </p>
-
-  			<img src="images/OllamaModels.png" class="zoomable" ondblclick="this.classList.toggle('full')"">
-  	     	<p>To download another Model. </p>
-
-  			<img src="images/OllamaDownloadModel1.png" class="zoomable" ondblclick="this.classList.toggle('full')"">
-  	     	<p>Here. </p>
-
-  			<img src="images/OllamaDownloadModel2.png" class="zoomable" ondblclick="this.classList.toggle('full')"">
-  	     	<p>And here. </p>
-
-  			<img src="images/OllamaDownloadModel3.png" class="zoomable" ondblclick="this.classList.toggle('full')"">
-  	     	<p>Copy. </p>
-
-  			<img src="images/OllamaDownloadModel4.png" class="zoomable" ondblclick="this.classList.toggle('full')">
-  	     	<p>Paste and run.
-			<br>Note that in order to run it from the application you need to close and reopen it.</p>
-			</li>
-			
-            <!--- L2 -->
-			<li>Ollama running
-   			<p></p><img src="images/OllamaCPU40B.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
-        	<p>Note - if you try a model that is too big for your computer, like 40B in this example, this is what you get.</p>
-
-			<img src="images/OllamaMistral24B.png" class="zoomable" ondblclick="this.classList.toggle('full')">
-			<p>When I tried a 24B model on a CPU with 16G RAM I get a lot of Disk usage (I believe swap files):</p>
-
-			<img src="images/OllamaDeleteModel.png" class="zoomable" ondblclick="this.classList.toggle('full')">
-   	     	<p>You can remove models from the terminal by "ollama list" and then "ollama rm modelName". </p>
-            </li>
-        </ol>
-        </li>
-	
-        <!--- L1 -->
 		<li>
 		<!--- Python Packages -->	
 		<p class="TitleList2Blue">Python Packages</p>
@@ -80,12 +26,12 @@
 			<p>Open Terminal inside VSCode (with the green .venv).</p>
             <ol>
                 <!--- L3 -->
-				<li>Type: pip install xlwings
+				<li>Type: <code>pip install xlwings</code>
    	            <p><img src="images/PipXlwings.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 				</li>
 
                 <!--- L3 -->
-				<li>Type: pip install customtkinter 
+				<li>Type: <code>pip install customtkinter</code>
 				</li>
             </ol>
             </li>    
@@ -101,17 +47,16 @@
 			<li>Add Button to the Ribbon
             <ol>
                 <!--- L3 -->
-                <li>Save the Excel file as .xlsm (for now, can be changed to include other types)
+                <li>Save the Excel file as .xlsm (for now, can be changed later to include other types)
 				</li>
 
                 <!--- L3 -->
-                <li>Inside Excel Alt + F1, add:
+                <li>Inside Excel, Alt + F1, add:
 				<br><pre>Sub LaunchAIExcel()
                 <br>    RunPython "import AiExcel_main; AiExcel_main.main()"
                 <br>End Sub</pre>
-				<br>Actually this is just the simple version, that doesn't always work,
-				<br>so copy into it the code from  AIExcel_bridge.bas file,
-				<br>for now, until installation is implemented.
+				<br>Actually this is just the basic example, and it doesn't always work,
+				<br>so instead of this code use the code from  AIExcel_bridge.bas file (in AiExcelProject)
 				</li>
 
                 <!--- L3 -->
@@ -134,24 +79,24 @@
                 <br>click "Add new location...",
                 <br>"Browse..." to D:\Dev\AiExcelProject,
                 <br>check "Subfolders of this location are also trusted",
-                <br>"OK".
+                <br>"OK"
 				</li>
 			</ol>
 		    </li>
 
             <!--- L2 -->
-			<li	>Connect RunPython to Excel
+			<li	>Connect Python to Excel
             <ol>
                 <!--- L3 -->
                 <li>Open Terminal in D:\Dev\AiExcelProject,
 				<br>go to green .venv, run:
-				<br> .\.venv\Scripts\Activate.ps1
-                <br>run : xlwings quickstart temp_fix --standalone
-				<br>a folder "temp_fix" was created.
+				<br><code>.\.venv\Scripts\Activate.ps1</code>
+                <br>run: <code>xlwings quickstart temp_fix --standalone</code>
+				<br>a folder "temp_fix" is created
 				</li>
 
                 <!--- L3 -->
-                <li>Open the Excel file that is in new folder,
+                <li>Open the Excel file that is in this new folder,
 				<br>press Alt + F11
 				<br>right click on Module -> xlwings
                 <br>"Export File..." and "Save"
@@ -160,9 +105,9 @@
                 <!--- L3 -->
                 <li>Open AI_Generated_Table.xlsm
                 <br>Alt + F11
-                <br>right-click VBAProject (I_Generated_Table.xlsm),
+                <br>right-click VBAProject (AI_Generated_Table.xlsm),
                 <br>"Import File..." and select xlwings.bas
-				<br>delete temp_fix folder and xlwings.bas file.
+				<br>delete temp_fix folder and xlwings.bas file
 				</li>
 			</ol>
 		    </li>

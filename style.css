@@ -111,3 +111,11 @@
             box-shadow: 0 0 100px rgba(0,0,0,0.8); 
             cursor: zoom-out;
         }
+
+        /* Style for code inside a sentence */
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
