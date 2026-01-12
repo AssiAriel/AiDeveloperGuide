@@ -100,8 +100,14 @@
             top: 50%; 
             left: 50%; 
             transform: translate(-50%, -50%); 
-            width: 90vw !important; 
+            
+            /* These 4 lines fix the overflow issue */
+            width: auto !important;      /* Allow the width to shrink if height is the limit */
+            height: auto !important;     /* Keep the aspect ratio correct */
+            max-width: 90vw;             /* Never wider than 90% of screen */
+            max-height: 90vh;            /* Never taller than 90% of screen */
+            
             z-index: 1000; 
             box-shadow: 0 0 100px rgba(0,0,0,0.8); 
             cursor: zoom-out;
-        }        
+        }

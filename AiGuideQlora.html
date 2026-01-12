@@ -520,7 +520,8 @@
      	<ol>
             <!--- L2 -->
    			<li>Download the yahma/alpaca-cleaned dataset
- 	     	<p>Copy this code to a file:
+ 	     	<p>This is done only once (the scripts below use this local copy of the dataset),
+            <br>copy this code to a file:
             <br><a href="texts/download_alpaca_dataset.py" download>Download "download_alpaca_dataset.py" file</a>
             <br>save the file as download_alpaca_dataset.py
             <br>type in ailab: "explorer.exe ."
@@ -530,13 +531,16 @@
  		    </li>
 
             <!--- L2 -->
- 			<li>Run SFT on Llama (no Inference and without saving the result adapters)
+ 			<li>Run first SFT on Llama (no Inference and without saving the result adapters)
  	     	<p>Copy this code to a file:
             <br><a href="texts/just_sft_llama3_1_8b.py" download>Download "just_sft_llama3_1_8b.py" file</a>
             <br>save the file as just_sft_llama3_1_8b.py
             <br>copy the file to ailab in Linux,
             <br>Inside ailab type: 
             <br>python just_sft_llama3_1_8b.py</p>
+			<p>Below is just the run of this script on this workstation at this point, for reference:</p>
+            <p><img src="images/SftLlamaFirstRun1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+            <p><img src="images/SftLlamaFirstRun2.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
  		    </li>
 
             <!--- L2 -->
@@ -547,6 +551,16 @@
             <br>copy the file to ailab in Linux,
             <br>Inside ailab type: 
             <br>python sft_llama3_1_8b.py</p>
+ 		    </li>
+
+            <!--- L2 -->
+ 			<li>Stress test SFT on Llama
+ 	     	<p>Same as the above, but edit the script to "Total steps = 600"
+			<p>Below are just the results on this workstation at this point, for reference,
+            <br>runtime, CPU and GPU loads and temperatures, fans speed, power, etc.. :</p>
+            <p><img src="images/SftLlamaStress.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+            <p><img src="images/llam3 8b Qlora HwMonitor.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+            <p><img src="images/llam3 8b Qlora Task Manager.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
  		    </li>
 		</ol>
 		</li>

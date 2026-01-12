@@ -14,6 +14,7 @@ model_path = "/mnt/d/ModelManagers/HuggingFace/Models"
 dataset_path = "/mnt/d/ModelManagers/Datasets/alpaca_cleaned"
 
 # 2. Load Model & Tokenizer
+print("\n⏳ Loading model - it takes several seconds ........\n")
 model, tokenizer = FastLanguageModel.from_pretrained(
     model_name = model_path,
     max_seq_length = 2048, # default = 2048 (higher uses more VRAM)
@@ -70,7 +71,7 @@ trainer = SFTTrainer(
         per_device_train_batch_size = 2,  # default = 2 (Higher = more VRAM used)
         gradient_accumulation_steps = 4,  # default = 4 (Total Batch = size * steps)
         warmup_steps = 5,                 # default = 5 (Initial 'slow start' steps)
-        max_steps = 60,                   # default = 60 (Total training duration)
+        max_steps = 10,                   # default = 60 (Total training duration)
         learning_rate = 2e-4,             # default = 2e-4 (How fast it learns)
         fp16 = not torch.cuda.is_bf16_supported(),
         bf16 = torch.cuda.is_bf16_supported(),
@@ -84,7 +85,7 @@ trainer = SFTTrainer(
 )
 
 # 7. Train!
-print("\n🚀 Starting Training on RTX 5070 Ti...")
+print("\n🚀 Starting Training on RTX 5070 Ti...\n")
 trainer.train()
 
 # 8. Create a unique folder name with date and time
@@ -108,7 +109,7 @@ text_streamer = TextStreamer(tokenizer, skip_prompt=True)
 
 print("\n🚀 Chat with your NEW model! (Type 'exit' to finish)")
 while True:
-    user_prompt = input("\n👤 User: ")
+    user_prompt = input("\n👨‍💻 User: ")
     if user_prompt.lower() in ["exit", "quit"]:
         break
 
