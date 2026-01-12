@@ -514,9 +514,9 @@
     <ol>
         <!--- L1 -->
         <li>
-		<!--- Run QLoRA on Llama -->
-		<p class="TitleList2Blue">Run QLoRA on Llama</p>
-        <p>Now, actually running SFT QLoRA to train  Llama 3.1 8B.</p>
+		<!--- First run of QLoRA on Llama -->
+		<p class="TitleList2Blue">First run of QLoRA on Llama</p>
+        <p>First run of SFT QLoRA training on Llama 3.1 8B.</p>
      	<ol>
             <!--- L2 -->
    			<li>Download the yahma/alpaca-cleaned dataset
@@ -542,7 +542,15 @@
             <p><img src="images/SftLlamaFirstRun1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
             <p><img src="images/SftLlamaFirstRun2.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
  		    </li>
+		</ol>
+		</li>
 
+        <!--- L1 -->
+        <li>
+		<!--- Run QLoRA on Llama -->
+		<p class="TitleList2Blue">Run QLoRA on Llama</p>
+        <p>Now, actually running SFT QLoRA to train Llama 3.1 8B.</p>
+     	<ol>
             <!--- L2 -->
  			<li>Run SFT on Llama (with Inference and saving the result adapters)
  	     	<p>Copy this code to a file:
@@ -563,6 +571,24 @@
             <p><img src="images/llam3 8b Qlora Task Manager.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
  		    </li>
 		</ol>
+		</li>
+
+        <!--- L1 -->
+        <li>
+		<!--- Inference on trained Llama -->
+		<p class="TitleList2Blue">Inference your previous trained Llama model</p>
+        <p>Choose a Llama model that you trained to inference.</p>
+     	<ol>
+            <!--- L2 -->
+ 			<li>Run the trained model
+ 	     	<p>Copy this code to a file:
+            <br><a href="texts/inference_trained_llama3_1_8b.py" download>Download "inference_trained_llama3_1_8b.py" file</a>
+            <br>save the file as sft_llama3_1_8b.py
+            <br>copy the file to ailab in Linux,
+            <br>Inside ailab type: 
+            <br>python inference_trained_llama3_1_8b.py</p>
+ 		    </li>
+        </ol>
 		</li>
     </ol>
 

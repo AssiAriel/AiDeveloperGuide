@@ -71,7 +71,7 @@ trainer = SFTTrainer(
         per_device_train_batch_size = 2,  # default = 2 (Higher = more VRAM used)
         gradient_accumulation_steps = 4,  # default = 4 (Total Batch = size * steps)
         warmup_steps = 5,                 # default = 5 (Initial 'slow start' steps)
-        max_steps = 10,                   # default = 60 (Total training duration)
+        max_steps = 60,                   # default = 60 (Total training duration)
         learning_rate = 2e-4,             # default = 2e-4 (How fast it learns)
         fp16 = not torch.cuda.is_bf16_supported(),
         bf16 = torch.cuda.is_bf16_supported(),
@@ -85,7 +85,7 @@ trainer = SFTTrainer(
 )
 
 # 7. Train!
-print("\n🚀 Starting Training on RTX 5070 Ti...\n")
+print("\n🚀 Starting Training...\n")
 trainer.train()
 
 # 8. Create a unique folder name with date and time
@@ -107,9 +107,15 @@ FastLanguageModel.for_inference(model) # This prepares the 'warm' model for talk
 from transformers import TextStreamer
 text_streamer = TextStreamer(tokenizer, skip_prompt=True)
 
-print("\n🚀 Chat with your NEW model! (Type 'exit' to finish)")
+# UI Colors for the Chat
+C_USER = "\033[96m"  # Cyan
+C_AI = "\033[92m"    # Green
+C_RESET = "\033[0m"
+C_BOLD = "\033[1m"
+
+print(f"\n🚀 Chat with your NEW model! (Type 'exit' to finish)")
 while True:
-    user_prompt = input("\n👨‍💻 User: ")
+    user_prompt = input(f"\n{C_BOLD}{C_USER}👨‍💻 User:{C_RESET} ")
     if user_prompt.lower() in ["exit", "quit"]:
         break
 
@@ -117,7 +123,7 @@ while True:
     full_prompt = alpaca_prompt.format(user_prompt, "", "")
     inputs = tokenizer([full_prompt], return_tensors = "pt").to("cuda")
 
-    print("🤖 AI: ", end="")
+    print(f"{C_BOLD}{C_AI}🤖 AI:{C_RESET} ", end="")
     _ = model.generate(
         **inputs, 
         streamer = text_streamer, 
