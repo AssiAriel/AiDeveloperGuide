@@ -114,6 +114,112 @@
 		</ol>
 		</li>
     </ol>
+    
+ <!----------------------------------------------------------------------------------------------->
+
+    <!--- Appendix -->
+    <p class="TitleList1Blue">Appendix</p>
+    <ol>
+        <!--- L1 -->
+		<li>
+		<!--- Continue Code Assist -->	
+		<p class="TitleList2Blue">Continue Code Assist</p>
+		<p>There are several Code assists, this one is nice.</p>
+	    <ol>
+            <!--- L2 -->
+ 			<li>Get Google API Key
+            <ol>
+                <!--- L3 -->
+                <li>Google AI Studio
+     		    <p><a href="https://aistudio.google.com/" target="_blank">Go to: Google AI Studio</a></p>
+				</li>
+
+                <!--- L3 -->
+                <li>"Get API key" and then "Create API key".
+     	        <p><img src="images/AiStudioKey1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+				</li>
+
+				<!--- L3 -->
+                <li>Copy the API key and save it - you will need it in a minute.
+     	        <p><img src="images/AiStudioKey2.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+				</li>
+            </ol>
+			</li>
+
+            <!--- L2 -->
+ 			<li>Install Continue Extension
+			<ol>
+                <!--- L3 -->
+ 			    <li>Inside VSCode go to "View -> Extensions",
+				<br>search for "Continue - open-source AI code agent",
+				<br>install it.
+				</li>
+
+                <!--- L3 -->
+                <li>Click "Continue" at the bottom right to see options
+				<br>You can disable "Autocomplete",
+				<br>you can open the Continue Chat,
+    	        <p><img src="images/ContinueSet1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+				</li>
+			</ol>
+			</li>	
+
+            <!--- L2 -->
+ 			<li>Connect Gemini to Continue
+			<ol>
+                <!--- L3 -->
+ 			    <li>Open the Continue Chat (see above),
+				<br>Click "Or, configure your own models",
+    	        <p><img src="images/ContinueSet2.png" class="zoomable" style="width: 200px;" ondblclick="this.classList.toggle('full')"></p>
+				</li>
+
+                <!--- L3 -->
+                <li>Paste the Google API key and "Connect"
+    	        <p><img src="images/ContinueSet3.png" class="zoomable" style="width: 200px;" ondblclick="this.classList.toggle('full')"></p>
+		    	</li>
+			</ol>
+			</li>
+			
+            <!--- L2 -->
+ 			<li>Run Continue Code Assist
+ 	     	<p>Right click on your code,
+			<br>you can edit your code, or open a chat,
+   	        <p><img src="images/ContinueMenu.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+            <p>"Ctrl + L", Chat, planning or creating a new function,
+            <br>"Ctrl + I", inline edit, highlight a specific block.</p>
+ 		    </li>
+
+            <!--- L2 -->
+ 			<li>Update the Assist model with your project info
+ 	     	<p>Inside the project create ".continue/rules" folders,
+            <br>and inside it "architecture.md" file,
+            <br>in the file write your information for Continue code assist,
+            <br>for example: "this is the project goal... architecture... using model..." - but with a very clear format,
+            <br>when you "Ctrl + L" Chat, start with @codebase to make the model read it first.
+ 		    </li>
+
+            <!--- L2 -->
+ 			<li>Gemini Quota
+ 	     	<p>I run and I got on my first try "Error handling model response" and inside "... You exceeded your current quota...",
+			<br>to fix it you can probably: 
+			<br>register Google Billing account and get some quota for free,
+			<br>or pay for a plan,
+			<br>or work on your local Llama3 Model,
+			<br>or, you can change the model to Gemini 2.5 Flash-Lite,
+			<br>but you can't just do it from the dropdown menu - it is not there,
+            <br>so you need to add it first,
+			<br>drop down "Local Config", and inside hoover over "Local Config", and you see a Gear icon,
+			<br>click it and it opens the config.yaml file,
+			<p><img src="images/ContinueSet4.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+			<p>add Gemini 2.5 Flash-Lite to the file - like you see in the picture (you might get a red error window, and need to fix some lose tabs or such),
+			<br>I also added disable to autocomplete option,
+            <br>and now choose it:
+   	        <p><img src="images/ContinueAddModel.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+ 		    </li>
+		</ol>
+		</li>
+    </ol>
+
 
 <!-- 
 			<li	>pyperclip
