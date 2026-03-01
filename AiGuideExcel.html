@@ -13,8 +13,8 @@
 <body>
     <p class="TitleHead">AI Developer Guide - Excel</p>  
 
-    <!--- Installations -->
-    <p class="TitleList1Blue">Installations</p>
+    <!--- Excel Installations -->
+    <p class="TitleList1Blue">Excel Installations</p>
     <ol>
         <!--- L1 -->
 		<li>
@@ -203,12 +203,89 @@
 
  <!----------------------------------------------------------------------------------------------->
 
-<!-- 
-			<li	>pyperclip
-    		<p>pip install pyperclip</p>
-     		<p>Just a copy tool needed sometimes.</p>
-		    </li>
--->
+    <!--- SQL Database -->
+    <p class="TitleList1Blue">Database</p>
+    <ol>
+        <!--- L1 -->
+        <li>
+		<!--- DBeaver -->
+		<p class="TitleList2Blue">DBeaver</p>
+     	<ol>
+            <!--- L2 -->
+   			<li>Download and install
+            <p><a href="https://dbeaver.io/download/" target="_blank">DBeaver Community - Windows (installer)</a>
+            <br>You need to be connected to GitHub.
+            <br>install under "D:\Tools\DBeaver"</p>
+            </li>
+        </ol>
+        </li>
+
+        <!--- L1 -->
+		<li>
+		<!--- Python Packages -->	
+		<p class="TitleList2Blue">Python Packages</p>
+        <ol>
+            <!--- L2 -->
+ 			<li> Install Python packages
+			<p>Open Terminal inside VSCode of the main App project (with the green .venv).</p>
+            <ol>
+                <!--- L3 -->
+				<li>Type: <code>pip install pandas</code>
+				</li>
+            </ol>
+            </li>    
+        </ol>
+        </li>
+
+        <!--- L1 -->
+		<li>
+		<!--- Create Database -->	
+		<p class="TitleList2Blue">Create Database</p>
+        <ol>
+            <!--- L2 -->
+ 			<li> Install Python packages
+			<p>Open Terminal inside VSCode of the main App project (with the green .venv).</p>
+            <ol>
+                <!--- L3 -->
+				<li>Type: <code>python sqlite_training_dataset.py</code>
+				</li>
+            </ol>
+            </li>    
+        </ol>
+        </li>
+
+        <!--- L1 -->
+        <li>
+		<!--- Connect DBeaver to the Database -->
+		<p class="TitleList2Blue">Connect DBeaver to the Database</p>
+        <ol>
+            <!--- L2 -->
+ 			<li> Connect
+            <ol>
+                <!--- L3 -->
+				<li>Type: <code>pip install pandas</code>
+				</li>
+
+                <!--- L3 -->
+				<li>Open DBeaver
+				</li>
+
+                <!--- L3 -->
+				<li>Click Database -> New Database Collection
+				</li>
+
+                <!--- L3 -->
+				<li>Select "SQLite" and "Next"
+				</li>
+
+                <!--- L3 -->
+				<li>Select the "Path" to the made by script above database anf"Finish"
+				</li>
+            </ol>
+            </li>    
+        </ol>
+        </li>
+    </ol>   
 
 </body>
 </html>
