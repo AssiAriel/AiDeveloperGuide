@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Developer Guide - Physical</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<!----------------------------------------------------------------------------------------------->
+
+<body>
+    <p class="TitleHead">AI Developer Guide - Physical</p>  
+
+    <!--- Environment Installations -->
+    <p class="TitleList1Blue">Environment Installations</p>
+    <ol>
+        <!--- L1 -->
+		<li>
+		<!--- Workstation Packages -->	
+		<p class="TitleList2Blue">Workstation Packages</p>
+        <ol>
+            <!--- L2 -->
+ 			<li> Workstation basic packages
+			<p>There are some basic packages that were already installed on the workstation from the previous project (if there is).
+            <br>Look at "AI Developer Guide - Workstation" page at "Development Environment" section.
+            <br>The below are the specific needed packages (but maybe more - look at the above:)</p>
+            <ol>
+                <!--- L3 -->
+				<li>DevDrive (and a new project inside it: "D:\Dev\AccPhy_Project")
+				</li>
+
+                <!--- L3 -->
+				<li>Python
+				</li>
+
+                <!--- L3 -->
+				<li>VSCode
+				</li>
+
+                <!--- L3 -->
+				<li>Git (and create a new GitHub project)
+				</li>
+
+                <!--- L3 -->
+				<li>Ollama
+				</li>
+            </ol>
+            </li>    
+        </ol>
+        </li>
+
+        <!--- L1 -->
+		<li>
+		<!--- Python Virtual Environment -->	
+		<p class="TitleList2Blue">Python Virtual Environment</p>
+     	<p>Note that we build a new virtual environment for this project (and install the Python packages there).</p>
+        <ol>
+            <!--- L2 -->s
+ 			<li> Create Virtual Environment
+            <ol>
+                <!--- L3 -->
+                <li>Inside VSCode, with your project open, open "View -> Terminal" (it will open at your project location)
+				</li>
+
+                <!--- L3 -->
+                <li>Type: <code>python -m venv .venv</code>
+				<br>(.venv folder is created inside the project folder)
+				</li>
+
+                <!--- L3 -->
+				<li>Type: <code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</code>
+				</li>
+
+                <!--- L3 -->
+				<li>Type: <code>.\.venv\Scripts\Activate.ps1</code>
+                <br>now you can see in the terminal that the line starts with green (.venv)
+   	            <p><img src="images/Venv1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+				</li>
+			</ol>
+			</li>
+        </ol>
+        </li>
+
+        <!--- L1 -->
+		<li>
+		<!--- Python Packages -->	
+		<p class="TitleList2Blue">Python Packages</p>
+        <ol>
+            <!--- L2 -->
+ 			<li> Install Python packages
+			<p>Open Terminal inside VSCode (with the green .venv).</p>
+            <ol>
+                <!--- L3 -->
+                <li>Type: <code>pip install ollama</code>
+				</li>
+
+                <!--- L3 -->
+				<li>Type: <code>pip install numpy</code>
+				</li>
+
+                <!--- L3 -->
+				<li>Type: <code>pip install mujoco</code>
+				</li>
+
+                <!--- L3 -->
+				<li>Open Terminal in the location of your project,
+				<br>make sure you are in green (.venv) or activate it,
+                <br>then type: <code>pip freeze > requirements.txt</code>
+				<br>do it every time you add a new package to your project (will be helpful on moving to other computers).
+   	            <p><img src="images/PipFreeze.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p> 
+				</li>
+
+                <!--- L3 -->
+				<li>VSCode looks for the packages in the usual place and mark them as problems.
+				<br>Search (Ctrl+Shift+P) for "Python: Select Interpreter",
+				<br>choose the .venv one.
+   	            <p><img src="images/VSCodeInterpreter.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+				</li>
+			</ol>
+			</li>
+        </ol>
+        </li>
+
+
+
+
+
+    </ol>
+
+</body>
+</html>
