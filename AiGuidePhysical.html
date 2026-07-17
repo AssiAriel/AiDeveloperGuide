@@ -105,6 +105,22 @@
 				</li>
 
                 <!--- L3 -->
+				<li>Type: <code>pip install opencv-python</code>
+				</li>
+
+                <!--- L3 -->
+				<li>Type: <code>pip install ultralytics</code>
+				</li>
+
+
+
+pip install customtkinter
+
+pip install matplotlib
+
+pip install  xlwings  (temporary)
+
+                <!--- L3 -->
 				<li>Open Terminal in the location of your project,
 				<br>make sure you are in green (.venv) or activate it,
                 <br>then type: <code>pip freeze > requirements.txt</code>
@@ -127,6 +143,107 @@
 
 
 
+    </ol>
+
+    <!--- Pan Tilt -->
+    <p class="TitleList1Blue">Pan Tilt</p>
+    <ol>
+        <!--- L1 -->
+        <li>
+        <!--- Hardware -->	
+        <p class="TitleList2Blue">Hardware</p>
+        <p>Pan and tilt of 2 x STS3215, UART2, Lipo 2S C35 2200mAh battery, XT60 wires, ToolkitRC M4 Pocket.</p>
+        <ol>
+            <!--- L2 -->
+            <li> Preparation
+            <ol>
+                <!--- L3 -->
+                <li>Leave only one servo connected, for now
+                </li>
+            </ol>
+            </li>
+        </ol>
+        </li>
+
+        <!--- L1 -->
+        <li>
+        <!--- ID Configuration -->	
+        <p class="TitleList2Blue">ID Configuration</p>
+        <p>FEETECH FD software:  FD1.9.8.3</p>
+        <ol>
+            <!--- L2 -->
+            <li> Setup and Change ID
+            <ol>
+                <!--- L3 -->
+                <li>Choose COM3 (check the device manager)
+                </li>
+                <!--- L3 -->
+                <li>Baud rate 1000000
+                </li>
+                <!--- L3 -->
+                <li>Click "Open" it turns to "Close"
+                </li>
+                <!--- L3 -->
+                <li>Click "Search"
+                </li>
+                <!--- L3 -->
+                <li>Choose the servo
+                </li>
+                <!--- L3 -->
+                <li>Click "Programming", then "ID", change it to "2"
+                </li>
+                <!--- L3 -->
+                <li>Now connect the other servo instead, to see that it is ID 1
+                </li>
+                <!--- L3 -->
+                <li>Connect both, Search, both should appear as ID 1 and ID 2
+                </li>
+            </ol>
+            </li>
+        </ol>
+        </li>
+
+        <!--- L1 -->
+        <li>
+        <!--- Testing -->	
+        <p class="TitleList2Blue">Testing</p>
+        <ol>
+            <!--- L2 -->
+            <li> Movement Check
+            <ol>
+                <!--- L3 -->
+                <li>Select one ofthe servos
+                </li>
+                <!--- L3 -->
+                <li>Click Debug
+                </li>
+                <!--- L3 -->
+                <li>Torque checkbox is checked
+                </li>
+                <!--- L3 -->
+                <li>Move the slider
+                </li>
+            </ol>
+            </li>
+        </ol>
+        </li>
+
+        <!--- L1 -->
+        <li>
+        <!--- Python Packages -->	
+        <p class="TitleList2Blue">Python Packages</p>
+        <ol>
+            <!--- L2 -->
+            <li> Install Python packages
+            <p>Open Terminal inside VSCode (with the green .venv).</p>
+            <ol>
+                <!--- L3 -->
+                <li>Type: <code>pip install pyserial</code>
+                </li>
+            </ol>
+            </li>
+        </ol>
+        </li>
     </ol>
 
 </body>
